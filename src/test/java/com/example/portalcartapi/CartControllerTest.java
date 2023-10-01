@@ -21,6 +21,7 @@ public class CartControllerTest {
         WebTestClient.ResponseSpec response = client.post().uri("/cart/v1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
+                .header("X-Customer-ID", "123124123")
                 .body(Mono.just("http://localhost:8020/cart/v1/123456"), String.class)
                 .exchange();
 
